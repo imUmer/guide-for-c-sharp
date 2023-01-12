@@ -34,11 +34,65 @@ It's important to keep in mind that while C# provides several built-in data type
 
 In C#, branching statements are used to control the flow of a program's execution. There are several branching statements available in C#, including:
 
-if: The if statement is used to test a condition, and if that condition is true, the code block following the condition is executed.
+- `if`: The if statement is used to test a condition, and if that condition is true, the code block following the condition is executed.
 
 ```
 if (condition) {
     // code to execute if condition is true
 }
-
 ```
+- `if-else`: The if-else statement is used to test a condition, and if that condition is true, the code block following the condition is executed, otherwise the code block following the else is executed.
+```
+if (condition) {
+    // code to execute if condition is true
+} else {
+    // code to execute if condition is false
+}
+```
+
+- `switch`: The switch statement is used to test a variable or expression against multiple values. When a match is found, the corresponding code block is executed.
+```
+switch (variable) {
+    case value1:
+        // code to execute when variable is value1
+        break;
+    case value2:
+        // code to execute when variable is value2
+        break;
+    default:
+        // code to execute when variable is not value1 or value2
+        break;
+}
+```
+
+In C#, loop statements are used to repeat a block of code multiple times. There are several loop statements available in C#, including:
+
+- `for`: The for loop is used to repeat a block of code a specific number of times. It is useful when you know how many times you want to repeat the code.
+```
+for (int i = 0; i < 5; i++) {
+    // code to repeat 5 times
+}
+```
+
+- `while`: The while loop is used to repeat a block of code as long as a certain condition is true.
+```
+while (condition) {
+    // code to repeat as long as condition is true
+}
+```
+
+- `do-while`: The `do-while` loop is similar to the `while` loop, but it guarantees that the code block will be executed at least once, before the condition is checked.
+```
+do {
+    // code to repeat
+} while (condition);
+```
+
+- `foreach` : The foreach loop is used to iterate over the items of a collection. It allows you to easily access each item in the collection, one at a time.
+```
+foreach (var item in collection) {
+    // code to execute for each item in the collection
+}
+```
+
+It's important to note that, using the correct branching and loop statements can make your code more readable, maintainable, and efficient. It's important to choose the one that fits your specific use case and also to be mindful of infinite loops and unintended loops when using them.
