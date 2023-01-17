@@ -1,0 +1,5 @@
+C:\Users\umer.niaz\Source\Repos\guide-for-c-sharp\obj\Debug\net7.0\numbertask.csproj.AssemblyReference.cache
+C:\Users\umer.niaz\Source\Repos\guide-for-c-sharp\obj\Debug\net7.0\numbertask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umer.niaz\Source\Repos\guide-for-c-sharp\obj\Debug\net7.0\numbertask.AssemblyInfoInputs.cache
+C:\Users\umer.niaz\Source\Repos\guide-for-c-sharp\obj\Debug\net7.0\numbertask.AssemblyInfo.cs
+C:\Users\umer.niaz\Source\Repos\guide-for-c-sharp\obj\Debug\net7.0\numbertask.csproj.CoreCompileInputs.cache
