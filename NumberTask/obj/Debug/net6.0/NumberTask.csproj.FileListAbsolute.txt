@@ -1,0 +1,15 @@
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\bin\Debug\net6.0\NumberTask.exe
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\bin\Debug\net6.0\NumberTask.deps.json
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\bin\Debug\net6.0\NumberTask.runtimeconfig.json
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\bin\Debug\net6.0\NumberTask.dll
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\bin\Debug\net6.0\NumberTask.pdb
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.csproj.AssemblyReference.cache
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.AssemblyInfoInputs.cache
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.AssemblyInfo.cs
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.csproj.CoreCompileInputs.cache
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.dll
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\refint\NumberTask.dll
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.pdb
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\NumberTask.genruntimeconfig.cache
+C:\Users\umer.niaz\source\repos\guide-for-c-sharp\NumberTask\obj\Debug\net6.0\ref\NumberTask.dll
