@@ -8,15 +8,83 @@ namespace HelloWorld
         {
             // Number class object 
             Numbers ob = new Numbers();
+            LoopAndDecisions obj = new LoopAndDecisions();
+            ListCollections lstObj = new ListCollections();
+            Person person = new Person();
             // Data types
             int a=10, b=5;
+
+            /// LoopAndDEcisions Class methods 
+            lstObj.createlist( "Umer","BCS","B");
+
+            /// LoopAndDEcisions Class methods 
+            obj.decisions(2,4);        
+
+            /// Numbers class methods 
             Console.WriteLine($"Result = {ob.workingWithNumbers(a, b)}");
             ob.precision(a,b);
             ob.overflowAndOwerlfow();
+
+            // Creating Tuples and deconstructing Tuples
+            (int, double) t = (2, 3.0);
+
+            /// deconstruct method # 1 
+            int a1;
+            double b1;
+            (a1, b1) = t;
+
+            /// with declaring var 
+            var t2 = (1,3);
+            (int c, int d) = t2;
+
+            Console.WriteLine($"a: {a1}; b: {b1}");
+            Console.WriteLine($"c: {c}; d: {d}");
+
+            // Lambds Expression 
+            Action<string> greet = name => {
+                Console.WriteLine($"Hey {name}");
+            };
+            greet("Umer");
+
+            /// Lambda Function 
+            Func<int, int, bool> compare = (x,y) => x==y;
+            Console.WriteLine(compare(11,2));
+
+            /// When we want to access the attributes which are private we cannot get them 
+            /// beacause they are encapculated with access modifiers 
+            /// But we have a way to acces those field by using properties 
+            person.Name = "Umer";
+            Console.WriteLine(person.Name);
+
+            // using Indexer in Person class 
+            person[0] = "Umer";
+            person[1] = "Malik";
+            Console.WriteLine(person[1]); 
+        }
+    }
+    class Person
+    {
+        /// Encapsulated data 
+        private string name; 
+        private string[] arr = new string[10];
+        // we can access that data using properties;
+        public string Name    
+        {
+            get { return name; }    
+            set { name = value; }   
+        }
+
+
+        // Define the indexer with this keyword and [] notation.
+        public string this[int i]
+        {
+            // get { return arr[i]; }
+            get => arr[1];
+            set { arr[i] = value; }
         }
     }
     public class Numbers
-    {        
+    {       
         public int workingWithNumbers(int a, int b)
         {
             int c = a + b;
@@ -68,12 +136,14 @@ namespace HelloWorld
             decimal d = 3.0M;
             Console.WriteLine(c / d);
         }
-        /// Explore integer precision and limits
-        //// Getting Quotient and remainder
+    }
+
+    public class LoopAndDecisions
+    {
+         /// Explore Dicisions Statements
+        //// 
         public void decisions(int a, int b)
         {
-                int a = 5;
-                int b = 4;
                 int c = 10;
                 if (a + b < 10)
                     Console.WriteLine("The answer is less than 10.");
@@ -138,9 +208,30 @@ namespace HelloWorld
                 }
                 Console.WriteLine($"The sum is {sum}");
         }
-
-     
-
     }
-
+ 
+    public class ListCollections
+    {
+        List<string> users = new List<string>();
+        /// Explore Creating Lists
+        //// 
+        public void createlist(string stdName, string className, string section)
+        {
+                var names = new List<string> { $"{stdName}", $"{className}", $"{section}" };
+                foreach(var name in names)
+                {
+                    System.Console.WriteLine($"{name.ToUpper()}");
+                } 
+        }
+        // Adding the value into the list 
+        public void addingValueInList(string value)
+        {
+            users.Add(value);
+        }
+        /// Counting the members in the list
+        public void countMembersInList()
+        {
+             System.Console.WriteLine($"The Total members are in list is: {users.Count}");
+        }
+    }
 }
