@@ -10,6 +10,7 @@ namespace HelloWorld
             Numbers ob = new Numbers();
             LoopAndDecisions obj = new LoopAndDecisions();
             ListCollections lstObj = new ListCollections();
+            Generics<string> generics = new HelloWorld.Generics<string>();
             Person person = new Person();
             // Data types
             int a=10, b=5;
@@ -60,8 +61,94 @@ namespace HelloWorld
             person[0] = "Umer";
             person[1] = "Malik";
             Console.WriteLine(person[1]); 
+
+            // Discards 
+
+            var (_, _, year1, pop1, _, pop2) = QueryCityDataForYears("New York City", 1960, 2010);
+
+            Console.WriteLine($"from year: {year1} : {pop2 - pop1:N0}");
+
+            static (string, double, int, int, int, int) QueryCityDataForYears(string name, int year1, int year2)
+            {
+                int population1 = 0, population2 = 0;
+                double area = 0;
+
+                if (name == "New York City")
+                {
+                    area = 468.48;
+                    if (year1 == 1960)
+                    {
+                        population1 = 7781984;
+                    }
+                    if (year2 == 2010)
+                    {
+                        population2 = 8175133;
+                    }
+                    return (name, area, year1, population1, year2, population2);
+                }
+
+                return ("", 0, 0, 0, 0, 0);
+            }   
+
+            // Generics in classes 
+            generics.lst.Add("Umer");
+            generics.lst.Add("Niaz");
+            generics.display();
+
+            // Iterators 
+            Users users = new Users();
+            foreach (var item in GetSingleDigitNumbers())
+            {
+               System.Console.WriteLine(item);
+            }
+
+
+            
+        }
+        public static IEnumerable<int> GetSingleDigitNumbers()
+        {
+            yield return 0;
+            yield return 1;
+            yield return 2;
+            yield return 3;
+            yield return 4;
+            yield return 5;
+            yield return 6;
+            yield return 7;
+            yield return 8;
+            yield return 9;
+        }
+        
+    }
+    class Generics<U>
+    {
+        public List<U> lst;
+        public Generics()
+        {
+            lst = new List<U>(3);
+        }
+
+        public void display()
+        {
+            foreach (var item in lst)
+            {
+               System.Console.WriteLine($"{item}");
+            }
         }
     }
+
+    class Users
+    {
+         
+        public IEnumerable<int> GetSingleDigitNumbers()
+        {
+            for (int i = 0; i < 10; i++)
+            {   
+                yield return i;
+            }
+        }
+    }
+
     class Person
     {
         /// Encapsulated data 
@@ -79,7 +166,7 @@ namespace HelloWorld
         public string this[int i]
         {
             // get { return arr[i]; }
-            get => arr[1];
+            get => arr[i];
             set { arr[i] = value; }
         }
     }
