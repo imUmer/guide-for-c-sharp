@@ -10,7 +10,7 @@ namespace HelloWorld
             Numbers ob = new Numbers();
             LoopAndDecisions obj = new LoopAndDecisions();
             ListCollections lstObj = new ListCollections();
-            Generics<string> generics = new HelloWorld.Generics<string>();
+            Generics<string> generics = new Generics<string>();
             Person person = new Person();
             // Data types
             int a=10, b=5;
@@ -101,9 +101,6 @@ namespace HelloWorld
             {
                System.Console.WriteLine(item);
             }
-
-
-            
         }
         public static IEnumerable<int> GetSingleDigitNumbers()
         {
@@ -120,6 +117,11 @@ namespace HelloWorld
         }
         
     }
+    [AttributeUsage(AttributeTargets.All)]
+    class HelpAttribute : Attribute
+    {
+        public string HelpMessage { get; set; }
+    }
     class Generics<U>
     {
         public List<U> lst;
@@ -127,7 +129,7 @@ namespace HelloWorld
         {
             lst = new List<U>(3);
         }
-
+        [Help(HelpMessage="It was used to display the info!")]
         public void display()
         {
             foreach (var item in lst)
