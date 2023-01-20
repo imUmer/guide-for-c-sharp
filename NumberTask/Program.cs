@@ -1,11 +1,38 @@
-﻿using System;
+﻿using System;  
 
 namespace HelloWorld
 {
+    
+    delegate int MathOperation(int a, int b);
+    delegate float MathOps(int a, int b);
+    
     class Program
     {
+        static int Add(int a, int b) { return a + b; }
+        static int Multiply(int a, int b) { return a * b; }
+        
+       
         static void Main(string[] args)
         {
+
+            /// Deconstruction 
+            (int x, int y) tup =  (1,2);
+            
+            ///
+            //t1 = t.x;
+            //t2 = t.y;
+            System.Console.WriteLine($"x = {tup.x} and y = {tup.y}");
+
+            MyClass de = new MyClass { X = 10, Y = 20 };
+            var (x, y) = de;
+
+            System.Console.WriteLine($"x = {x} and y = {y}");
+
+
+
+            User oo = new User();
+            oo.display("Umer");
+            
             // Number class object 
             Numbers ob = new Numbers();
             LoopAndDecisions obj = new LoopAndDecisions();
@@ -101,7 +128,34 @@ namespace HelloWorld
             {
                System.Console.WriteLine(item);
             }
+
+
+
+            //// Delegates 
+             // Create an instance of the delegate that points to the Add method
+            MathOperation addOperation = new MathOperation(Add);
+            // Use the delegate to call the Add method
+            int result = addOperation(3, 4);
+            Console.WriteLine("3 + 4 = " + result);
+
+            // Create an instance of the delegate that points to the Multiply method
+            MathOperation multiplyOperation = new MathOperation(Multiply);
+            // Use the delegate to call the Multiply method
+            result = multiplyOperation(3, 4);
+            Console.WriteLine("3 * 4 = " + result);
+
+            MathOps mathOps = new MathOps(AddEx);
+            Func<int,bool> namee = (a) => a > 10; 
+            MathOps math = (a,b) => a + b;
+            System.Console.WriteLine(mathOps(1,3) + " " + math(1,4) + " " + namee(11));
+
         }
+        static float AddEx(int a, int b) { return (float )(a + b) ; }
+        
+        Func<int, int, bool> compare = (x,y) => x==y;
+        
+            // Declare a delegate type
+ 
         public static IEnumerable<int> GetSingleDigitNumbers()
         {
             yield return 0;
