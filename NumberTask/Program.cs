@@ -5,7 +5,8 @@ namespace HelloWorld
     
     delegate int MathOperation(int a, int b);
     delegate float MathOps(int a, int b);
-    
+
+    public delegate string Print(string strr);
     class Program
     {
         static int Add(int a, int b) { return a + b; }
@@ -149,7 +150,34 @@ namespace HelloWorld
             MathOps math = (a,b) => a + b;
             System.Console.WriteLine(mathOps(1,3) + " " + math(1,4) + " " + namee(11));
 
+
+            // common pattern Delegates
+
+
+            Print print = new Print(printA);
+            print += printB;
+
+            string result1 = print("Umer");
+            string result2 = print("Malik");
+            System.Console.WriteLine($"{result1} and {result2}");
+
+            // sring interpolation 
+            var dbValue = "12345";
+            var formattedString = $"The value is {dbValue:###-####-####}";
+            System.Console.WriteLine(formattedString);
+
         }
+
+        static string printA(string strr)
+        {
+            return ($"Fun A : {strr}");
+        }
+
+        static string printB(string strr)
+        {
+            return ($"Fun B : {strr}");
+        }
+
         static float AddEx(int a, int b) { return (float )(a + b) ; }
         
         Func<int, int, bool> compare = (x,y) => x==y;
