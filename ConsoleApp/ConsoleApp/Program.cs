@@ -2,8 +2,22 @@
 
 namespace HelloWorld
 {
+
     class Program
     {
+
+            static async public  Task<string> GetDataAsync() {
+            var httpClient = new HttpClient();
+            var result = await httpClient.GetStringAsync("https://example.com");
+            return result;
+        }
+       static async public Task<string> ReadDataAsync()
+        {
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync("https://learn.microsoft.com/en-us/dotnet/csharp/async");
+            var content = await response.Content.ReadAsStringAsync();
+            return content;
+        }
 
         public delegate Action MyDelegate();
 
@@ -14,6 +28,14 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Numbers ob = new Numbers(10);
+            ob.display();
+            // Async on = new Async();
+            // var result = await GetDataAsync();
+            // Console.WriteLine(result);
+            System.Console.WriteLine("Start");
+            string result =  ReadDataAsync();
+            Console.WriteLine(result);
+            System.Console.WriteLine("End");
             //
             // Name name = new Name(nameM);
             // name("Umer");
@@ -28,22 +50,22 @@ namespace HelloWorld
             // Console.WriteLine(c);
             // Console.WriteLine(ob.workingWithNumbers(a, b));
 
-            int[] numbers = {1,2,3,4,5};
-            var lst = [1,2,3];
-            var numArray =
-                from no in numbers
-                where ( no % 2) == 0
-                select no;
+            // int[] numbers = {1,2,3,4,5};
+            // var lst = [1,2,3];
+            // var numArray =
+            //     from no in numbers
+            //     where ( no % 2) == 0
+            //     select no;
             
-            List<int> numlist = 
-                (from no in numbers
-                    where (no % 2) != 0
-                    select no).ToList(); 
-                    System.Console.WriteLine(numlist.Count);
-            foreach (var item in lst)
-            {
-                System.Console.WriteLine(item);
-            }
+            // List<int> numlist = 
+            //     (from no in numbers
+            //         where (no % 2) != 0
+            //         select no).ToList(); 
+            //         System.Console.WriteLine(numlist.Count);
+            // foreach (var item in lst)
+            // {
+            //     System.Console.WriteLine(item);
+            // }
             
         }
     }
@@ -70,9 +92,10 @@ namespace HelloWorld
               }
 
                }
-        public void display()
+        public int display()
         {
             System.Console.WriteLine(a);
+            return 1;
         }
         public int workingWithNumbers(int a, int b)
         {
